@@ -1,51 +1,37 @@
-import { useState } from 'react';
+
+import MenuAppBar from 'components/Header'
+import {Counter} from 'components/Counter'
+import {About} from 'components/About'
+import {Contact} from 'components/Contact'
+import Home from 'components/Home'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import styled from '@emotion/styled';
-import { Buttons } from 'components/Button';
-import { Label } from 'components/Label';
-import ButtonAppBar from 'components/Header'
 
 const Container = styled.div`
-  height: 90vh;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
 
-const Title = styled.h1`
-  margin-bottom: 32px;
-`;
 
-const Contents = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
 
 function App() {
-  const [counter, setCounter] = useState(0);
 
-  const sub = () => {
-    setCounter(counter - 1);
-  };
-  const add = () => {
-    setCounter(counter + 1);
-  };
 
   return (
-    <>    
-   <ButtonAppBar></ButtonAppBar>
-    <Container>  
-      <Title>Counter App</Title>
-      <Contents>
-        <Buttons label="-" onClick={sub} />
-        <Label data={counter} />
-        <Buttons label="+" onClick={add} />
-      </Contents>
-    </Container>
-    </>
-
-    
+    <Router>
+   <MenuAppBar />
+   <Container>
+   <Routes>
+    <Route path='/' element={<Home />} />
+   <Route path="/counter" element={<Counter />} />
+   <Route path="/about" element={<About />} />
+   <Route path="/Contact" element={<Contact />} />
+   </Routes>
+   </Container>
+    </Router>    
   );
 }
 
