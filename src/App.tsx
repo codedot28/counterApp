@@ -1,8 +1,8 @@
 
 import MenuAppBar from 'components/Header'
 import {Counter} from 'components/Counter'
-import {About} from 'components/About'
-import {Contact} from 'components/Contact'
+import About from 'components/About'
+import {Contact} from './components/Contact'
 import Home from 'components/Home'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import styled from '@emotion/styled';
@@ -14,7 +14,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
 `;
-
+``
 
 
 function App() {
