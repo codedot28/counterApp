@@ -6,6 +6,7 @@ import {Contact} from './components/Contact'
 import Home from 'components/Home'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import styled from '@emotion/styled';
+import LandingPage from 'components/LandingPage.jsx'
 
 const Container = styled.div`
 
@@ -25,7 +26,7 @@ function App() {
    <MenuAppBar />
    <Container>
    <Routes>
-    <Route path='/' element={<Home />} />
+    <Route path='/' element={<LandingPage />} />
    <Route path="/counter" element={<Counter />} />
    <Route path="/about" element={<About />} />
    <Route path="/Contact" element={<Contact />} />
